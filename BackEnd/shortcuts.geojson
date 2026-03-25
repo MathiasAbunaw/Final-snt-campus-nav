@@ -1,0 +1,22 @@
+
+{
+    "type": "FeatureCollection",
+    "features" : [
+        {
+            "type": "Feature",
+            "geometry": { 
+                "type": "LineString",
+                "coordinates": [
+                    [-91.7654, 37.9516],
+                    [-91.7663, 37.9501]
+                ]
+            },
+            "properties": {
+                "name": "Toomey to Butler Shortcut",
+                "description": " What this does is that i created geojson file that store additional edges of paths that can be used by networkx to calculate shortest route for example i can create a an edges from the start of a grass field to the end and networkxx will consider that a path",
+                "type": "shortcut",
+                "surface": "grass"
+            }
+        }
+    ]
+}
