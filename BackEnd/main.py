@@ -25,12 +25,12 @@ print(f'Endges: {len(G.edges)}') #This will be the length of how many different 
 
 
 #this all allow us to open and read the shortcut file we created 
-with open("shortcuts.geojeson") as f:
+with open("shortcuts.geojson") as f:
     shortcuts = json.load(f)
 
 #this for loop is used inorder to looped through all of the feature key within the json file and find all the shortcuts and then add them as new edges that can be used within the graph 
 for feature in shortcuts["features"]:
-    coords = feature["geometry"]["cooridinates"]
+    coords = feature["geometry"]["coordinates"]
 
     #get the start and end coordinate of the short cut
 
@@ -44,4 +44,6 @@ for feature in shortcuts["features"]:
     
     #This will add the new shortcut as a new edges between those nodes
 
-    G.add_edge(start_node, end_node, name=feature["properties"]["name"], shortcuts= True)
+    G.add_edge(start_node, end_node, name=feature["properties"]["name"], shortcut= True)
+
+print("Shortcuts stitched into graph successfully!")
