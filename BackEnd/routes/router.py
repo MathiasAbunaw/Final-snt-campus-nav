@@ -22,10 +22,6 @@ def get_route(start_lat: float, start_lng: float, end_lat: float, end_lng : floa
     start_node = ox.nearest_nodes(G, start_lng, start_lat)
     end_node = ox.nearest_nodes(G, end_lng, end_lat)
 
-    print(f"Start node: {start_node}")
-    print(f"End node: {end_node}")
-    print(f"Start node coords: {G.nodes[start_node]}")
-    print(f"End node coords: {G.nodes[end_node]}")
 
     #This will find the shortest path giving the starting node and ending node  using the Dijkstra algoriths to find the shortest length 
     path = nx.shortest_path(G, start_node, end_node, weight="length") #weight = 'length means we want networkX to add up the actual distance of edges not just count how many edges their are
